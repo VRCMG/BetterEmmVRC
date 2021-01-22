@@ -23,7 +23,7 @@ namespace BetterEmmVRC.EmmVRCNLib
         /// <summary>
         /// Ecks Dee
         /// </summary>
-        internal readonly string VersionNumber = "2.5.0";
+        internal readonly string VersionNumber = "2.6.1";
 
         internal string loginKey;
 

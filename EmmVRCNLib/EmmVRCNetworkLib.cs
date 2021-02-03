@@ -1,4 +1,4 @@
-﻿using emmVRC.Libraries;
+using emmVRC.Libraries;
 using MelonLoader;
 using System;
 using System.Collections.Generic;

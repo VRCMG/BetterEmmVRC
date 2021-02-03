@@ -1,4 +1,4 @@
-﻿using emmVRC.Libraries;
+using emmVRC.Libraries;
 using emmVRC.Network.Objects;
 using MelonLoader;
 using System;
@@ -44,14 +44,14 @@ namespace emmVRC.Hacks
 
         internal static void Initialize()
         {
-            CustomAvatarFavorites.pageAvatar = QuickMenuUtils.GetVRCUiMInstance().menuContent.transform.Find("Screens/Avatar").gameObject;
-            CustomAvatarFavorites.FavoriteButton = QuickMenuUtils.GetVRCUiMInstance().menuContent.transform.Find("Screens/Avatar/Favorite Button").gameObject;
-            CustomAvatarFavorites.FavoriteButtonNew = UnityEngine.Object.Instantiate<GameObject>(CustomAvatarFavorites.FavoriteButton, QuickMenuUtils.GetVRCUiMInstance().menuContent.transform.Find("Screens/Avatar/"));
+            CustomAvatarFavorites.pageAvatar = QuickMenuUtils.GetVRCUiMInstance().field_Public_GameObject_0.transform.Find("Screens/Avatar").gameObject;
+            CustomAvatarFavorites.FavoriteButton = QuickMenuUtils.GetVRCUiMInstance().field_Public_GameObject_0.transform.Find("Screens/Avatar/Favorite Button").gameObject;
+            CustomAvatarFavorites.FavoriteButtonNew = UnityEngine.Object.Instantiate<GameObject>(CustomAvatarFavorites.FavoriteButton, QuickMenuUtils.GetVRCUiMInstance().field_Public_GameObject_0.transform.Find("Screens/Avatar/"));
             CustomAvatarFavorites.FavoriteButtonNewButton = CustomAvatarFavorites.FavoriteButtonNew.GetComponent<Button>();
             CustomAvatarFavorites.FavoriteButtonNewButton.onClick.RemoveAllListeners();
             CustomAvatarFavorites.FavoriteButtonNewButton.onClick.AddListener((Action)delegate ()
             {
-                ApiAvatar apiAvatar = CustomAvatarFavorites.pageAvatar.GetComponent<PageAvatar>().avatar.field_Internal_ApiAvatar_0;
+                ApiAvatar apiAvatar = CustomAvatarFavorites.pageAvatar.GetComponent<PageAvatar>().field_Public_SimpleAvatarPedestal_0.field_Internal_ApiAvatar_0;
                 bool flag = false;
                 for (int i = 0; i < CustomAvatarFavorites.LoadedAvatars.Count; i++)
                 {
@@ -104,7 +104,7 @@ namespace emmVRC.Hacks
             {
 
             }
-            CustomAvatarFavorites.MigrateButton = UnityEngine.Object.Instantiate<GameObject>(CustomAvatarFavorites.FavoriteButton, QuickMenuUtils.GetVRCUiMInstance().menuContent.transform.Find("Screens/Avatar/"));
+            CustomAvatarFavorites.MigrateButton = UnityEngine.Object.Instantiate<GameObject>(CustomAvatarFavorites.FavoriteButton, QuickMenuUtils.GetVRCUiMInstance().field_Public_GameObject_0.transform.Find("Screens/Avatar/"));
             CustomAvatarFavorites.MigrateButton.GetComponentInChildren<RectTransform>().localPosition += new Vector3(0f, 765f);
             CustomAvatarFavorites.MigrateButton.GetComponentInChildren<Text>().text = "Migrate";
             CustomAvatarFavorites.MigrateButton.GetComponentInChildren<Button>().onClick = new Button.ButtonClickedEvent();
@@ -147,15 +147,15 @@ namespace emmVRC.Hacks
             {
                 CustomAvatarFavorites.MigrateButton.SetActive(false);
             }
-            GameObject gameObject = QuickMenuUtils.GetVRCUiMInstance().menuContent.transform.Find("Screens/Avatar/Vertical Scroll View/Viewport/Content/Legacy Avatar List").gameObject;
+            GameObject gameObject = QuickMenuUtils.GetVRCUiMInstance().field_Public_GameObject_0.transform.Find("Screens/Avatar/Vertical Scroll View/Viewport/Content/Legacy Avatar List").gameObject;
             CustomAvatarFavorites.PublicAvatarList = UnityEngine.Object.Instantiate<GameObject>(gameObject, gameObject.transform.parent);
             CustomAvatarFavorites.PublicAvatarList.transform.SetAsFirstSibling();
-            CustomAvatarFavorites.ChangeButton = QuickMenuUtils.GetVRCUiMInstance().menuContent.transform.Find("Screens/Avatar/Change Button").gameObject;
+            CustomAvatarFavorites.ChangeButton = QuickMenuUtils.GetVRCUiMInstance().field_Public_GameObject_0.transform.Find("Screens/Avatar/Change Button").gameObject;
             CustomAvatarFavorites.baseChooseEvent = CustomAvatarFavorites.ChangeButton.GetComponent<Button>().onClick;
             CustomAvatarFavorites.ChangeButton.GetComponent<Button>().onClick = new Button.ButtonClickedEvent();
             CustomAvatarFavorites.ChangeButton.GetComponent<Button>().onClick.AddListener((Action)delegate ()
             {
-                ApiAvatar selectedAvatar = CustomAvatarFavorites.pageAvatar.GetComponent<PageAvatar>().avatar.field_Internal_ApiAvatar_0;
+                ApiAvatar selectedAvatar = CustomAvatarFavorites.pageAvatar.GetComponent<PageAvatar>().field_Public_SimpleAvatarPedestal_0.field_Internal_ApiAvatar_0;
                 if (!selectedAvatar.id.Contains("local"))
                 {
                     API.Fetch<ApiAvatar>(selectedAvatar.id, (Action<ApiContainer>)delegate (ApiContainer cont)
@@ -234,10 +234,10 @@ namespace emmVRC.Hacks
             CustomAvatarFavorites.currPageAvatar = CustomAvatarFavorites.pageAvatar.GetComponent<PageAvatar>();
             CustomAvatarFavorites.NewAvatarList = CustomAvatarFavorites.PublicAvatarList.GetComponent<UiAvatarList>();
             CustomAvatarFavorites.NewAvatarList.clearUnseenListOnCollapse = false;
-            CustomAvatarFavorites.NewAvatarList.category = UiAvatarList.EnumNPublicSealedvaInPuMiFaSpClPuLi9vUnique.SpecificList;
+            CustomAvatarFavorites.NewAvatarList.field_Public_EnumNPublicSealedvaInPuMiFaSpClPuLi9vUnique_0 = UiAvatarList.EnumNPublicSealedvaInPuMiFaSpClPuLi9vUnique.SpecificList;
             CustomAvatarFavorites.SearchAvatarList = CustomAvatarFavorites.PublicAvatarList.GetComponent<UiAvatarList>();
             CustomAvatarFavorites.SearchAvatarList.clearUnseenListOnCollapse = false;
-            CustomAvatarFavorites.currPageAvatar.avatar.avatarScale *= 0.85f;
+            CustomAvatarFavorites.currPageAvatar.field_Public_SimpleAvatarPedestal_0.field_Public_Single_0 *= 0.85f;
             GameObject gameObject2 = UnityEngine.Object.Instantiate<GameObject>(CustomAvatarFavorites.ChangeButton, CustomAvatarFavorites.avText.transform.parent);
             gameObject2.GetComponentInChildren<Text>().text = "↻";
             gameObject2.GetComponent<Button>().onClick.RemoveAllListeners();
@@ -442,7 +442,7 @@ namespace emmVRC.Hacks
                 VRCUiPageHeader componentInChildren = QuickMenuUtils.GetVRCUiMInstance().GetComponentInChildren<VRCUiPageHeader>(true);
                 if (componentInChildren != null)
                 {
-                    CustomAvatarFavorites.searchBox = componentInChildren.searchBar;
+                    CustomAvatarFavorites.searchBox = componentInChildren.field_Public_UiInputField_0;
                 }
             }
             if (CustomAvatarFavorites.searchBoxAction == null)
@@ -457,10 +457,10 @@ namespace emmVRC.Hacks
                     MelonCoroutines.Start(CustomAvatarFavorites.SearchAvatars(searchTerm));
                 }));
             }
-            if (CustomAvatarFavorites.searchBox != null && CustomAvatarFavorites.searchBox.editButton != null && !CustomAvatarFavorites.searchBox.editButton.interactable && CustomAvatarFavorites.PublicAvatarList.activeInHierarchy && BetterEmmVRC.BetterEmmVRC.NetworkLib.authToken != null && RoomManager.field_Internal_Static_ApiWorld_0 != null)
+            if (CustomAvatarFavorites.searchBox != null && CustomAvatarFavorites.searchBox.field_Public_Button_0 != null && !CustomAvatarFavorites.searchBox.field_Public_Button_0.interactable && CustomAvatarFavorites.PublicAvatarList.activeInHierarchy && BetterEmmVRC.BetterEmmVRC.NetworkLib.authToken != null && RoomManager.field_Internal_Static_ApiWorld_0 != null)
             {
-                CustomAvatarFavorites.searchBox.editButton.interactable = true;
-                CustomAvatarFavorites.searchBox.onDoneInputting = CustomAvatarFavorites.searchBoxAction;
+                CustomAvatarFavorites.searchBox.field_Public_Button_0.interactable = true;
+                CustomAvatarFavorites.searchBox.field_Public_UnityAction_1_String_0 = CustomAvatarFavorites.searchBoxAction;
             }
             if (CustomAvatarFavorites.PublicAvatarList.activeSelf && BetterEmmVRC.BetterEmmVRC.NetworkLib.authToken != null)
             {
@@ -477,12 +477,12 @@ namespace emmVRC.Hacks
                 {
                     CustomAvatarFavorites.menuJustActivated = false;
                 }
-                if (CustomAvatarFavorites.currPageAvatar != null && CustomAvatarFavorites.currPageAvatar.avatar != null && CustomAvatarFavorites.currPageAvatar.avatar.field_Internal_ApiAvatar_0 != null && CustomAvatarFavorites.LoadedAvatars != null && CustomAvatarFavorites.FavoriteButtonNew != null)
+                if (CustomAvatarFavorites.currPageAvatar != null && CustomAvatarFavorites.currPageAvatar.field_Public_SimpleAvatarPedestal_0 != null && CustomAvatarFavorites.currPageAvatar.field_Public_SimpleAvatarPedestal_0.field_Internal_ApiAvatar_0 != null && CustomAvatarFavorites.LoadedAvatars != null && CustomAvatarFavorites.FavoriteButtonNew != null)
                 {
                     bool flag = false;
                     for (int i = 0; i < CustomAvatarFavorites.LoadedAvatars.Count; i++)
                     {
-                        if (CustomAvatarFavorites.LoadedAvatars[i].id == CustomAvatarFavorites.currPageAvatar.avatar.field_Internal_ApiAvatar_0.id)
+                        if (CustomAvatarFavorites.LoadedAvatars[i].id == CustomAvatarFavorites.currPageAvatar.field_Public_SimpleAvatarPedestal_0.field_Internal_ApiAvatar_0.id)
                         {
                             flag = true;
                         }

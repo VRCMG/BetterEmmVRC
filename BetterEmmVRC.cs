@@ -5,7 +5,7 @@ using MelonLoader;
 using VRC.Core;
 
 //Metadata For MelonLoader To Read
-[assembly: MelonInfo(typeof(BetterEmmVRC.BetterEmmVRC), "BetterEmmVRC", "", "𝒫𝓁𝒶𝑔𝓊𝑒")]
+[assembly: MelonInfo(typeof(BetterEmmVRC.BetterEmmVRC), "BetterEmmVRC", "2.0", "𝒫𝓁𝒶𝑔𝓊𝑒")]
 [assembly: MelonGame("VRChat", "VRChat")]
 
 namespace BetterEmmVRC

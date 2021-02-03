@@ -1,4 +1,4 @@
-﻿using BetterEmmVRC.Helpers_And_Extensions;
+using BetterEmmVRC.Helpers_And_Extensions;
 using emmVRC.Hacks;
 using emmVRC.Network;
 using MelonLoader;
@@ -39,7 +39,7 @@ namespace BetterEmmVRC
         {
             if (RoomManager.prop_Boolean_3)
             {
-                if (APIUser.CurrentUser != null && VRCPlayer.field_Internal_Static_VRCPlayer_0 != null && VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.prop_EnumNPublicSealedva9vUnique_0 == VRCAvatarManager.EnumNPublicSealedva9vUnique.EnumValue7/*Custom Avatar Loaded*/ && !LoggedIn)
+                if (APIUser.CurrentUser != null && VRCPlayer.field_Internal_Static_VRCPlayer_0 != null && VRCPlayer.field_Internal_Static_VRCPlayer_0.prop_VRCAvatarManager_0.prop_EnumNPublicSealedvaUnLoErBlSaSuPeCu9vUnique_0 == VRCAvatarManager.EnumNPublicSealedvaUnLoErBlSaSuPeCu9vUnique.Custom/*Custom Avatar Loaded*/ && !LoggedIn)
                 {
                     Helpers.Log("Logging In To emmVRCNetwork..");
 

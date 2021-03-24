@@ -234,7 +234,7 @@ namespace emmVRC.Hacks
             CustomAvatarFavorites.currPageAvatar = CustomAvatarFavorites.pageAvatar.GetComponent<PageAvatar>();
             CustomAvatarFavorites.NewAvatarList = CustomAvatarFavorites.PublicAvatarList.GetComponent<UiAvatarList>();
             CustomAvatarFavorites.NewAvatarList.clearUnseenListOnCollapse = false;
-            CustomAvatarFavorites.NewAvatarList.field_Public_EnumNPublicSealedvaInPuMiFaSpClPuLi9vUnique_0 = UiAvatarList.EnumNPublicSealedvaInPuMiFaSpClPuLi9vUnique.SpecificList;
+            CustomAvatarFavorites.NewAvatarList.field_Public_EnumNPublicSealedvaInPuMiFaSpClPuLiCrUnique_0 = UiAvatarList.EnumNPublicSealedvaInPuMiFaSpClPuLiCrUnique.SpecificList;
             CustomAvatarFavorites.SearchAvatarList = CustomAvatarFavorites.PublicAvatarList.GetComponent<UiAvatarList>();
             CustomAvatarFavorites.SearchAvatarList.clearUnseenListOnCollapse = false;
             CustomAvatarFavorites.currPageAvatar.field_Public_SimpleAvatarPedestal_0.field_Public_Single_0 *= 0.85f;
